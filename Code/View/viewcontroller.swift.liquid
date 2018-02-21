@@ -8,18 +8,21 @@
 
 import UIKit
 
-class {{ module_info.name }}ViewController: UIViewController, {{module_info.name}}ViewInput {
+class {{ module_info.name }}ViewController: UIViewController, {{module_info.name}}ViewProtocol {
 
-    var output: {{ module_info.name }}ViewOutput!
+    var presenter: {{ module_info.name }}PresenterProtocol?
 
-    // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        output.viewIsReady()
+
+        self.createUI()
+
     }
 
 
-    // MARK: {{module_info.name}}ViewInput
-    func setupInitialState() {
+    private func createUI() {
+
+        self.view.backgroundColor = .white
+
     }
 }
