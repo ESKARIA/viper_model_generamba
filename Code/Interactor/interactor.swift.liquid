@@ -6,8 +6,9 @@
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-class {{ module_info.name }}Interactor: {{ module_info.name }}InteractorInput {
+class {{ module_info.name }}Interactor: {{ module_info.name }}InteractorProtocol {
 
-    weak var output: {{ module_info.name }}InteractorOutput!
+    weak var presenter: {{ module_info.name }}PresenterProtocol?
 
 }
+
