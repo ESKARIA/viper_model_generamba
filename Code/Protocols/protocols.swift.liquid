@@ -1,0 +1,38 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+protocol {{ module_info.name }}ViewProtocol: class {
+
+    var presenter: {{ module_info.name }}PresenterProtocol? { get set }
+
+}
+
+protocol {{ module_info.name }}WireFrameProtocol: class {
+
+    static func create{{ module_info.name }}Module() -> UIViewController
+
+}
+
+protocol {{ module_info.name }}PresenterProtocol: class {
+
+    var view: {{ module_info.name }}ViewProtocol? { get set }
+    var wireFrame: {{ module_info.name }}WireFrameProtocol? { get set }
+    var interactor: {{ module_info.name }}InteractorProtocol? { get set }
+
+}
+
+protocol {{ module_info.name }}InteractorProtocol: class {
+
+    var presenter: {{ module_info.name }}PresenterProtocol? { get set }
+    // INTERACTOR -> PRESENTER
+    func login(login: String, password: String, service: String?)
+
+}
+
