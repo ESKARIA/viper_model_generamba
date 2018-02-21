@@ -6,13 +6,10 @@
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-class {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput, {{ module_info.name }}ViewOutput, {{ module_info.name }}InteractorOutput {
+class {{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol {
 
-    weak var view: {{ module_info.name }}ViewInput!
-    var interactor: {{ module_info.name }}InteractorInput!
-    var router: {{ module_info.name }}RouterInput!
+    weak var view: {{ module_info.name }}ViewProtocol?
+    var wireFrame: {{ module_info.name }}WireFrameProtocol?
+    var interactor: {{ module_info.name }}InteractorProtocol?
 
-    func viewIsReady() {
-
-    }
 }
