@@ -1,0 +1,29 @@
+# Template information section
+name: VIPER_SWIFT
+summary: TAXCOM VIPER MODEL
+author: Emil Karimov
+version: 1.0.0
+license: MIT
+
+# The declarations for code files
+code_files:
+# View layer
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+
+# Presenter layer
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+
+# Interactor layer
+- {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
+
+# Router layer
+- {name: Protocols/Protocols.swift, path: Code/Protocols/protocols.swift.liquid}
+
+# Configurator
+- {name: WireFrame/WireFrame.swift, path: Code/WireFrame/wireframe.swift.liquid}
+
+# The declarations for test files
+test_files:
+
+# Template dependencies
+dependencies:
