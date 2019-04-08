@@ -1,5 +1,5 @@
 //
-//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.file_name }}
 //  {{ module_info.project_name }}
 //
 //  Created by {{ developer.name }} on {{ date }}.
@@ -8,30 +8,10 @@
 
 import UIKit
 
-protocol {{ module_info.name }}ViewProtocol: class {
+protocol {{ module_info.name }}ViewProtocol: class { }
 
-    var presenter: {{ module_info.name }}PresenterProtocol? { get set }
+protocol {{ module_info.name }}WireFrameProtocol: class { }
 
-}
+protocol {{ module_info.name }}PresenterProtocol: class { }
 
-protocol {{ module_info.name }}WireFrameProtocol: class {
-
-    static func create{{ module_info.name }}Module() -> UIViewController
-
-}
-
-protocol {{ module_info.name }}PresenterProtocol: class {
-
-    var view: {{ module_info.name }}ViewProtocol? { get set }
-    var wireFrame: {{ module_info.name }}WireFrameProtocol? { get set }
-    var interactor: {{ module_info.name }}InteractorProtocol? { get set }
-
-}
-
-protocol {{ module_info.name }}InteractorProtocol: class {
-
-    var presenter: {{ module_info.name }}PresenterProtocol? { get set }
-    // INTERACTOR -> PRESENTER
-
-}
-
+protocol {{ module_info.name }}InteractorProtocol: class { }

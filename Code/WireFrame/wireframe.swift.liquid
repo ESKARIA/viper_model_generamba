@@ -1,5 +1,5 @@
 //
-//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ prefix }}{{ module_info.file_name }}
 //  {{ module_info.project_name }}
 //
 //  Created by {{ developer.name }} on {{ date }}.
@@ -8,22 +8,14 @@
 
 import UIKit
 
-class {{ module_info.name }}WireFrame: {{ module_info.name }}WireFrameProtocol {
+class {{ module_info.name }}WireFrame: BaseWireFrame {
+    //func presentSomeViewController(from view: {{ module_info.name }}ViewProtocol) {
+    //    guard let fromView = view as? UIViewController else { return }
+    //    let viewController = self.resolver.someViewController()
+    //    fromView.navigationController?.pushViewController(viewController, animated: true)
+    //}
+}
 
-    class func create{{ module_info.name }}Module() -> UIViewController {
-        let viewController = {{ module_info.name }}ViewController()
-        let presenter: {{ module_info.name }}PresenterProtocol = {{ module_info.name }}Presenter()
-        let wireFrame: {{ module_info.name }}WireFrameProtocol = {{ module_info.name }}WireFrame()
-        let interactor: {{ module_info.name }}InteractorProtocol = {{ module_info.name }}Interactor()
-
-        presenter.wireFrame = wireFrame
-        presenter.view = viewController
-        presenter.interactor = interactor
-        interactor.presenter = presenter
-        viewController.presenter = presenter
-
-        return viewController
-    }
-
+extension {{ module_info.name }}WireFrame: {{ module_info.name }}WireFrameProtocol {
 
 }
