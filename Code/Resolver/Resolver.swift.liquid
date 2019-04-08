@@ -13,6 +13,7 @@ protocol {{ module_info.name }}Protocol {
     func present{{ module_info.name }}ViewController() -> UIViewController
 }
 
+// MARK: - {{ module_info.name }}Protocol
 extension DIResolver: {{ module_info.name }}Protocol {
     func present{{ module_info.name }}ViewController() -> UIViewController {
         let viewController = {{ module_info.name }}ViewController()
