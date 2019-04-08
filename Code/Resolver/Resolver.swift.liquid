@@ -1,0 +1,25 @@
+//
+//  DIResolver+{{ module_info.name }}.swift
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+// MARK: - {{ module_info.name }}
+protocol {{ module_info.name }}Protocol {
+    func present{{ module_info.name }}ViewController() -> UIViewController
+}
+
+extension DIResolver: {{ module_info.name }}Protocol {
+    func present{{ module_info.name }}ViewController() -> UIViewController {
+        let viewController = {{ module_info.name }}ViewController()
+        let interactor = {{ module_info.name }}Interactor()
+        let wireFrame = {{ module_info.name }}WireFrame(resolver: self)
+        let presenter = {{ module_info.name }}Presenter(view: viewController, wireFrame: wireFrame, interactor: interactor)
+        viewController.presenter = presenter
+        return viewController
+    }
+}
