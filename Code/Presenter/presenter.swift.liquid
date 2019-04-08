@@ -1,15 +1,22 @@
 //
-//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.file_name }}
 //  {{ module_info.project_name }}
 //
 //  Created by {{ developer.name }} on {{ date }}.
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-class {{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol {
+class {{ module_info.name }}Presenter: BasePresenter {
 
     weak var view: {{ module_info.name }}ViewProtocol?
-    var wireFrame: {{ module_info.name }}WireFrameProtocol?
-    var interactor: {{ module_info.name }}InteractorProtocol?
+    private var wireFrame: {{ module_info.name }}WireFrameProtocol
+    private var interactor: {{ module_info.name }}InteractorProtocol
 
+    init(view: {{ module_info.name }}ViewProtocol, wireFrame: {{ module_info.name }}WireFrameProtocol, interactor: {{ module_info.name }}InteractorProtocol) {
+        self.view = view
+        self.interactor = interactor
+        self.wireFrame = wireFrame
+    }
 }
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterProtocol { }

@@ -1,8 +1,8 @@
 # Template information section
-name: VIPER_SWIFT
+name: viper
 summary: MY VIPER MODEL
-author: Emil Karimov
-version: 1.0.0
+author: ESKARIA Corporation
+version: 1.2.0
 license: MIT
 
 # The declarations for code files
@@ -16,14 +16,18 @@ code_files:
 # Interactor layer
 - {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
 
-# Router layer
+# Protocols layer
 - {name: Protocols/Protocols.swift, path: Code/Protocols/protocols.swift.liquid}
 
 # Configurator
 - {name: WireFrame/WireFrame.swift, path: Code/WireFrame/wireframe.swift.liquid}
 
+# Resolver file
+- {name: +DIResolver.swift, path: Code/Resolver/Resolver.swift.liquid}
+
 # The declarations for test files
 test_files:
+- {name: +Tests.swift, path: Code/Tests/Tests.swift.liquid}
 
 # Template dependencies
 dependencies:

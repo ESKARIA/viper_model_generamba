@@ -1,5 +1,5 @@
 //
-//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.file_name }}
 //  {{ module_info.project_name }}
 //
 //  Created by {{ developer.name }} on {{ date }}.
@@ -7,22 +7,20 @@
 //
 
 import UIKit
+import SnapKit
 
-class {{ module_info.name }}ViewController: BaseViewController, {{module_info.name}}ViewProtocol {
+class {{ module_info.name }}ViewController: BaseViewController {
 
-    var presenter: {{ module_info.name }}PresenterProtocol?
+    var presenter: {{ module_info.name }}PresenterProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.createUI()
 
     }
 
-
     private func createUI() {
-
-        self.view.backgroundColor = .white
 
     }
 }
+extension {{ module_info.name }}ViewController: {{module_info.name}}ViewProtocol { }
