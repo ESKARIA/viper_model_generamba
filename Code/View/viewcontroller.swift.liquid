@@ -20,7 +20,19 @@ class {{ module_info.name }}ViewController: BaseViewController {
     }
 
     private func createUI() {
+        self.TESTDATA()
 
+
+    }
+    
+    private func TESTDATA() {
+        let TESTLABEL = UILabel()
+        TESTLABEL.textAlignment = .center
+        TESTLABEL.text = "{{ module_info.name }} Module"
+        self.view.addSubview(TESTLABEL)
+        TESTLABEL.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
     }
 }
 
